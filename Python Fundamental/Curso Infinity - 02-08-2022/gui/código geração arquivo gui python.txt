@@ -1,0 +1,3 @@
+código:
+
+pyuic5 -x template.ui -o template.py

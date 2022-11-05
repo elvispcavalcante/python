@@ -1,0 +1,136 @@
+https://docs.google.com/presentation/d/1rp_voYu3B0YT6ilm1YjXdKxiSQPyVQWc_KteoHCQakk/edit
+
+Players.csv
+https://infinityschool.eadplataforma.com/upload/files/090720221657382274archive.zip
+
+
+
+Titanic.csv
+https://infinityschool.eadplataforma.com/upload/files/220720221658507951titanic.zip
+
+
+
+
+import pandas as pd 
+
+
+dicio = {
+    'Nome': ['Fernando', 'Marcelo', 'Miguel', 'Humberto'],
+    'Gols': [2, 2, 4, 0],
+    'Posição': ['Atacante', 'Meia', 'Atacante', 'Zagueiro'],
+    'Altura': [1.82, 1.72, 1.65, 1.90]
+}
+
+--------------------------------------------------------------------------------------------
+
+jogadores = pd.DataFrame(dicio)
+
+jogadores
+
+---------------------------------------------------------------------------------------------
+
+
+jogadores.rename(columns={'Gols':'N°. gols'}, inplace=True)
+
+--------------------------------------------------------------------------------------------
+
+peso = {'Peso': [78, 67, 68, 81]}
+
+peso = pd.DataFrame(peso)
+
+peso
+
+
+------------------------------------------------------------------------------------------------
+
+jogadores = jogadores.reindex(columns=['Nome', 'Altura',
+                                       'Peso', 'IMC', 'Posição'])
+
+-------------------------------------------------------------------------------------------------------
+
+jogadores.loc[(jogadores['Posição'] == 'Atacante') & (jogadores['Peso'] < 70)]
+
+---------------------------------------------------------------------------------------------------------
+
+
+players.isnull().sum()
+
+-------------------------------------------------------------------------------------------------------------
+
+players['height'].isnull().sum()
+
+------------------------------------------------------------------------------------------------------------
+
+
+players.loc[players['height'].isnull()]
+
+-------------------------------------------------------------------------------------------------------------
+
+titanic.loc[(titanic['Sex'] == 'male') & (titanic['Survived'] == 1)]
+
+
+- Utilizando a função loc, faça a contagem de quantos passageiros sobreviveram e quantos morreram
+
+titanic.loc[titanic['Survived'] == 1]
+
+titanic.loc[titanic['Survived'] == 0]
+
+- Substitua os valores nulos da idade pela mediana
+
+titanic['Age'].fillna(titanic['Age'].median(), inplace=True)
+
+- Substitua os valores nulos do embarque para "porto"
+
+titanic['Embarked'].fillna('Porto', inplace=True)
+
+- Qual a média de idade dos passageiros sobreviventes?
+
+titanic_1 = titanic.loc[titanic['Survived'] == 1]
+
+titanic_1['Age'].mean()
+
+- Qual a média de idade dos passageiros sobreviventes do sexo masculino e Feminino?
+
+titanic.loc[(titanic['Survived'] == 1) & (titanic['Sex'] == 'male')]['Age'].mean()
+
+
+titanic.loc[(titanic['Survived'] == 1) & (titanic['Sex'] == 'female')]['Age'].mean()
+
+- Qual a média de idade dos passageiros não sobreviventes do sexo masculino e feminino?
+
+titanic.loc[(titanic['Survived'] == 0) & (titanic['Sex'] == 'male')]['Age'].mean()
+
+titanic.loc[(titanic['Survived'] == 0) & (titanic['Sex'] == 'female')]['Age'].mean()
+
+- Qual a média de idade dos passageiros não-sobreviventes?
+
+titanic.loc[titanic['Survived'] == 0]['Age'].mean()
+
+- Quantos homens e quantas mulheres não sobreviveram ao acidente?
+
+len(titanic.loc[(titanic['Survived'] == 0) & (titanic['Sex'] == 'male')])
+
+len(titanic.loc[(titanic['Survived'] == 0) & (titanic['Sex'] == 'female')])
+
+- Quantos homens e quantas mulheres sobreviveram ao acidente?
+
+len(titanic.loc[(titanic['Survived'] == 1) & (titanic['Sex'] == 'male')])
+
+---------------------------------------------------------------------------------------------------
+
+Quantos sobreviventes são da primeira classe?
+
+
+Quantos não-sobreviventes são da primeira classe?
+
+
+Quantos sobreviventes são da segunda classe?
+
+
+Quantos não-sobreviventes são da segunda classe?
+
+
+Quantos sobreviventes são da terceira classe?
+
+
+

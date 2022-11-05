@@ -1,0 +1,28 @@
+from PyQt5.QtWidgets import QMainWindow, QPushButton, QApplication, QMessageBox
+
+
+class Janela(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.botao = QPushButton('Clique em mim!', self)
+        self.botao.move(200, 200)
+        self.botao.resize(90, 40)
+        self.botao.clicked.connect(self.clicou)
+        self.botao.setStyleSheet('QPushButton {background-color: #F14651;}')
+
+        self.carregarJanela()
+
+    def carregarJanela(self):
+        self.setGeometry(500, 400, 400, 300)
+        self.show()
+
+    def clicou(self):
+        mensagem = QMessageBox(title='Info', text='Você clicou no botão!')
+        mensagem.show()
+
+
+app = QApplication([])
+window = Janela()
+
+app.exec()

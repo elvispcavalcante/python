@@ -1,0 +1,15 @@
+.link {
+    color: white;
+}
+
+.link:hover {
+    color: #ffb300;
+}
+
+.centro-h {
+    text-align: center;
+}
+
+.margem_footer {
+    margin-top: 150px;
+}
