@@ -1,4 +1,4 @@
-# Aprendizado Python
+# Aprendizado Curso de Full Stack - Infinity School
 ## Fundamentos de Python
 
 Esse repositório tem por objetivo publicar os códigos de python estudados
